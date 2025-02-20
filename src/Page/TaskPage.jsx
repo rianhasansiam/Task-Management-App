@@ -7,19 +7,19 @@ const TaskPage = (props) => {
     <div className="flex flex-col md:flex-row h-screen bg-gray-100">
       {/* Sidebar */}
       <div className="w-full md:w-1/5 bg-white shadow-md p-4 space-y-6">
-        <div className="font-semibold text-lg text-center md:text-left">Task Manager</div>
+        <div className="font-semibold text-2xl text-center md:text-left">Task Manager</div>
         
         <nav className="space-y-4 flex flex-col">
           <NavLink
             to="/taskPage/taskHome"
-            className="text-center md:text-left py-2 rounded-md text-lg font-semibold"
+            className="text-center  py-2 rounded-md text-lg font-semibold "
           >
             🏠 Home
           </NavLink>
 
           <NavLink
             to="/taskPage/taskAdd"
-            className="text-center md:text-left py-2 rounded-md text-lg font-semibold"
+            className="text-center  py-2 rounded-md text-lg font-semibold"
           >
             📋 Add Task
           </NavLink>

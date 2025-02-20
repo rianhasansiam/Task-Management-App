@@ -47,23 +47,7 @@ const TaskAdd = () => {
             ></textarea>
           </div>
 
-          {/* Category Selection */}
-          <div>
-            <label htmlFor="category" className="block text-sm font-medium text-gray-700">
-              Category
-            </label>
-            <select
-              id="category"
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-            >
-              <option value="">Choose a category</option>
-              <option value="Personal">Personal</option>
-              <option value="Work">Work</option>
-              <option value="Shopping">Shopping</option>
-            </select>
-          </div>
+        
 
           {/* Add Task Button */}
           <div className="flex justify-end">

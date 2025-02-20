@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link, Outlet } from 'react-router-dom';
 
 const TaskHome = (props) => {
-  const [selectedTab, setSelectedTab] = useState('To-Do');
+  const [selectedTab, setSelectedTab] = useState('All Tasks');
 
   return (
     <>
