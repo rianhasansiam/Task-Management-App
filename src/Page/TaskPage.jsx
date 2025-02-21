@@ -1,8 +1,49 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useNavigate } from 'react-router-dom';
+import { contextData } from '../Contex';
+import { signOut } from 'firebase/auth';
+import Swal from 'sweetalert2';
+import auth from '../Security/Firebase';
 
 const TaskPage = (props) => {
+
+  // const { signoutHandle } = useContext(contextData);
+
+  const navigate= useNavigate()
+
+  const signoutHandle = () => {
+
+
+
+
+    signOut(auth)
+    .then(() => {
+      // Sign-out successful.
+      console.log("User signed out successfully.");
+      Swal.fire({
+        icon: 'info',
+        title: 'Signed Out',
+        text: 'You have been signed out successfully!',
+        confirmButtonText: 'OK',
+      });
+
+
+      navigate('/')
+
+    })
+    .catch((error) => {
+      // An error happened.
+      console.error("Error signing out:", error);
+    });
+
+
+
+
+  };
+
+
+
   return (
     <div className="flex flex-col md:flex-row h-screen bg-gray-100">
       {/* Sidebar */}
@@ -28,9 +69,17 @@ const TaskPage = (props) => {
 
       {/* Main Content */}
       <div className="flex-1 p-4 md:p-6">
-        <header className="text-center md:text-left">
+     
+        <header className=" flex justify-between lg:px-10">
+
+          <div className='text-center md:text-left'>
+
           <h1 className="text-2xl md:text-3xl font-bold">Design System</h1>
           <p className="text-gray-500">Create a component library for our products</p>
+          </div>
+
+
+          <button onClick={signoutHandle} className='btn bg-[#ee185cc4] text-white'>Logout</button>
         </header>
 
         <Outlet />

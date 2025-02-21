@@ -4,6 +4,7 @@ import './index.css'
 
 
 
+
 import {
   
   RouterProvider,
@@ -11,6 +12,7 @@ import {
 import Root from './Root.jsx';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Contex from './Contex.jsx';
+
 
 
 
@@ -28,6 +30,7 @@ createRoot(document.getElementById('root')).render(
 
        <QueryClientProvider client={queryClient}>
      <RouterProvider router={Root} />
+
      </QueryClientProvider>
      </Contex>
   </StrictMode>,

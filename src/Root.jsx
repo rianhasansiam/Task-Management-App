@@ -7,6 +7,7 @@ import ToDo from "./Page/ToDo";
 import InProgress from "./Page/InProgress";
 import Done from "./Page/Done";
 import AllTasks from "./Page/AllTasks";
+import Private from "./Page/Private";
 
 
 
@@ -19,7 +20,7 @@ const Root = createBrowserRouter([
     },
     {
       path: '/taskPage',
-      element:<TaskPage></TaskPage>,
+      element:<Private><TaskPage></TaskPage></Private> ,
       children:[
         {
           path:'taskHome',

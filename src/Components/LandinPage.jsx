@@ -12,7 +12,7 @@ const LandingPage = () => {
     useEffect(()=>{
 
         if(user){
-            navigate('/taskHome')
+            navigate('/taskPage/taskHome')
             console.log(user,'kam korse')
         }
     },[user])
@@ -29,9 +29,9 @@ const LandingPage = () => {
 
 
           <nav className="hidden md:flex items-center font-semibold">
-            <NavLink  className="mx-4 text-gray-700 hover:text-blue-500">Features</NavLink>
+            {/* <NavLink  className="mx-4 text-gray-700 hover:text-blue-500">Features</NavLink>
             <NavLink className="mx-4 text-gray-700 hover:text-blue-500">Pricing</NavLink>
-            <NavLink className="mx-4 text-gray-700 hover:text-blue-500">Contact</NavLink>
+            <NavLink className="mx-4 text-gray-700 hover:text-blue-500">Contact</NavLink> */}
             <button onClick={handleLogin} className="bg-blue-600 text-white px-6 py-2 rounded-md ml-4 ">Get Started</button>
           </nav>
 
