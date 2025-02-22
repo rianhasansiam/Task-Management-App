@@ -52,7 +52,7 @@ const TaskPage = (props) => {
         
         <nav className="space-y-4 flex flex-col">
           <NavLink
-            to="/taskPage/taskHome"
+            to="/taskPage/taskHome/alltasks"
             className="text-center  py-2 rounded-md text-lg font-semibold "
           >
             🏠 Home
@@ -68,7 +68,7 @@ const TaskPage = (props) => {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 p-4 md:p-6">
+      <div className="flex-1 p-4 md:p-6 overflow-y-auto ">
      
         <header className=" flex justify-between lg:px-10">
 

@@ -4,11 +4,12 @@ import { Link, Outlet } from 'react-router-dom';
 
 const TaskHome = (props) => {
   const [selectedTab, setSelectedTab] = useState('All Tasks');
+  
 
   return (
     <>
       {/* Tabs */}
-      <div className="flex flex-wrap space-x-2 sm:space-x-4 md:space-x-6 my-4 sm:my-6 text-sm sm:text-base md:text-lg justify-center">
+      <div className="flex flex-wrap space-x-2 sm:space-x-4 md:space-x-6 my-4 sm:my-6 text-sm sm:text-base md:text-lg justify-center ">
         {['All Tasks', 'To-Do', 'In Progress', 'Done'].map((tab, index) => {
           const links = [
             '/taskPage/taskHome/alltasks',
@@ -35,7 +36,9 @@ const TaskHome = (props) => {
 
       <div className="divider"></div>
 
+      
       <Outlet></Outlet>
+     
     </>
   );
 };

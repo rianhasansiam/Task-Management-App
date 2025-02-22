@@ -11,8 +11,8 @@ const LandingPage = () => {
 
     useEffect(()=>{
 
-        if(user){
-            navigate('/taskPage/taskHome')
+      if(user){
+          navigate('/taskPage/taskHome/alltasks')
             console.log(user,'kam korse')
         }
     },[user])

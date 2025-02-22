@@ -1,8 +1,9 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 
+
 // Base URL for the API (replace with your actual API endpoint)
-const API_URL = 'https://jsonplaceholder.typicode.com/todos';
+const API_URL = 'http://localhost:5000/tasks';
 
 
 

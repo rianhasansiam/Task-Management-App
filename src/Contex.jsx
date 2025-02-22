@@ -17,8 +17,8 @@ const Contex = ({ children }) => {
       .then((result) => {
         Swal.fire({
           icon: 'success',
-          title: 'Operation Successful',
-          text: 'Your action was successful!',
+          title: 'Login',
+          text: 'login successful!',
           showConfirmButton: false,  // Show the confirm button
           timer: 1000,              // Disable automatic close
           allowOutsideClick: false, // Prevent closing by clicking outside
