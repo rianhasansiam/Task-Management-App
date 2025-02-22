@@ -31,6 +31,11 @@ const AllTasks = () => {
     })
   );
 
+
+
+  
+
+
   if (isLoading) {
     return <div>Loading tasks...</div>;
   }
@@ -42,6 +47,12 @@ const AllTasks = () => {
   if (!tasks || tasks.length === 0) {
     return <div>No tasks available.</div>;
   }
+
+
+
+
+
+
 
   const getTaskPos = (id) => tasks.findIndex((task) => task._id === id);
 

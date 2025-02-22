@@ -1,6 +1,5 @@
-import { useSortable } from '@dnd-kit/sortable';
-
 import React from 'react';
+import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { PencilIcon, TrashIcon } from '@heroicons/react/16/solid';
 
