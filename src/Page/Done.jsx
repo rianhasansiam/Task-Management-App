@@ -1,34 +1,32 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react';
 import { useFetchData } from '../hooks/useFetchData';
 import { contextData } from '../Contex';
-import TaskCard from '../Components/TaskCard';
 import Donexxx from './Donexxx';
 import { closestCorners, DndContext, KeyboardSensor, PointerSensor, TouchSensor, useSensor, useSensors } from '@dnd-kit/core';
 import { arrayMove, sortableKeyboardCoordinates } from '@dnd-kit/sortable';
+import { useUpdateData } from '../hooks/useUpdateData';
 
 const Done = () => {
-   const { user } = useContext(contextData);
-    const email = user?.email;
+  const { user } = useContext(contextData);
+  const email = user?.email;
+
+  // Fetching tasks related to the user's email
+  const { data, isLoading, error } = useFetchData(`http://localhost:5000/tasksPerson?email=${email}`);
   
-    // Always call the hook outside of the conditional
-    const { data, isLoading, error } = useFetchData(`http://localhost:5000/tasksPerson?email=${email}`);
-    // console.log(data);
-
-
-
+  // Hook for updating task order
+  const { mutate: updateTask, isLoading: isUpdating } = useUpdateData('http://localhost:5000/done/reorder');
 
   const [tasks, setTasks] = useState([]);
 
-  // Filter tasks in 'In Progress' category and set the state
+  // Filter tasks in 'Done' category and set the state
   useEffect(() => {
     if (data && Array.isArray(data)) {
-      const filteredTasks = data.filter(task => task.category === 'In Progress');
+      const filteredTasks = data.filter(task => task.category === 'Done');
       setTasks(filteredTasks);
     }
   }, [data]);
 
-
-  // Always call hooks before any conditional returns
+  // Define the sensors for DnD kit
   const sensors = useSensors(
     useSensor(PointerSensor),
     useSensor(TouchSensor, {
@@ -41,57 +39,40 @@ const Done = () => {
     })
   );
 
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error loading tasks: {error.message}</div>;
 
+  // If there are no tasks available after filtering
+  if (!tasks || tasks.length === 0) {
+    return <div>No task available.</div>;
+  }
 
+  const getTaskPos = (id) => tasks.findIndex((task) => task._id === id);
 
-
-
-
-
-  
-    if (isLoading) return <div>Loading...</div>;
-    if (error) return <div>Error loading tasks: {error.message}</div>;
-  
-    // Filter tasks in 'In Progress' category
-    const filteredTasks = data?.filter(done => done.category === 'Done');
-  
-    // If there are no tasks available after filtering
-    if (!filteredTasks || filteredTasks.length === 0) {
-      return <div>No task available.</div>;
-    }
-
-
-
-
-
-
-
-
- const getTaskPos = (id) => tasks.findIndex((task) => task._id === id);
-
+  // Handle drag-and-drop event for reordering tasks
   const handleDragEnd = (e) => {
     const { active, over } = e;
     if (!over || active.id === over.id) return;
 
-    setTasks((tasks) => {
+    setTasks((prevTasks) => {
       const originalPos = getTaskPos(active.id);
       const newPos = getTaskPos(over.id);
-      return arrayMove(tasks, originalPos, newPos);
+
+      // Reorder the tasks locally
+      const reorderedTasks = arrayMove(prevTasks, originalPos, newPos);
+
+      // Update the order on the server
+      updateTask(reorderedTasks);  // Call the mutation to update the task order in the backend
+
+      return reorderedTasks;
     });
   };
 
-
-
-
-
-
   return (
-    
-       <DndContext sensors={sensors} collisionDetection={closestCorners} onDragEnd={handleDragEnd}>
+    <DndContext sensors={sensors} collisionDetection={closestCorners} onDragEnd={handleDragEnd}>
       <Donexxx data={tasks} />
     </DndContext>
-   
-  )
-}
+  );
+};
 
-export default Done
+export default Done;

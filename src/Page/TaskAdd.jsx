@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { useAddData } from '../hooks/useAddData';
 import { contextData } from '../Contex';
 import Swal from 'sweetalert2';
+import { useFetchAllData } from '../hooks/useFetchAllData';
 
 const TaskAdd = () => {
   const [title, setTitle] = useState('');
@@ -10,6 +11,9 @@ const TaskAdd = () => {
 
   // Call the useAddData hook
   const { mutate: addTask, isLoading, isError, error } = useAddData();
+  const { data, isLoadingg } = useFetchAllData();
+
+  console.log(data?.length)
 
   // Validation function for title and description
   const validateForm = () => {
@@ -53,6 +57,7 @@ const TaskAdd = () => {
     // Call the mutation function with the new task data
     addTask(
       {
+        _id: (data?.length + 1).toString(),
         title: title.trim(),
         description: description.trim(),
         category: 'To-Do', // Default category

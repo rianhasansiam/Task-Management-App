@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 
 // Base URL for the API
-const API_URL = 'http://localhost:5000/tasksPerson';
+
 
 // Custom Hook for Fetching Tasks with a Query Parameter
 export const useFetchData = (queryParam) => {
