@@ -1,36 +1,49 @@
-# TasKit
+# Rian Takser
 
 ## Overview
 
-This project is a task management application that allows users to create, update, delete, and reorder tasks. It
-features a drag-and-drop interface for task management and supports different task categories such as "To-Do", "
-In-Progress", and "Done".
+This Task Management Application allows users to manage their tasks efficiently by categorizing them into three sections: To-Do, In Progress, and Done. Users can add, edit, delete, and reorder tasks using a drag-and-drop interface. The application supports Firebase Authentication for secure login and ensures real-time
 
 ## Live Links
 
-- [Live Demo](https://tas-kit.vercel.app)
+- [Live Demo](https://task-management-cp.web.app)
 
 ## Dependencies
 
-- React
-- TypeScript
-- react-query
-- react-hook-form
-- zod
-- react-hot-toast
-- dayjs
-- lucide-react
-- shadcn/ui
+- **@dnd-kit/core:** Drag and drop utilities for React.
+- **@tanstack/react-query:** Data fetching and synchronization library for React.
+- **axios:** Promise-based HTTP client.
+- **firebase:** Firebase library for authentication and database.
+- **react:** JavaScript library for building user interfaces.
+- **react-hook-form:** Form handling and validation library for React.
+- **react-router:** Routing library for React.
+- **zustand:** Lightweight state management library.
+- **tailwindcss:** Utility-first CSS framework.
+
+
+
+
+## Technologies Used
+
+- **React**: A powerful frontend library used for building dynamic user interfaces.
+- **Tailwind CSS**: A utility-first CSS framework that provides rapid styling capabilities.
+- **Firebase**: A comprehensive backend service used for authentication, database management, and real-time data syncing.
+- **React Router**: A standard library for routing and navigation in React applications.
+- **React Beautiful DnD**: A drag-and-drop library for smooth and accessible drag-and-drop interactions.
+- **React Toastify**: A notification library that provides easy-to-use, customizable toast messages.
+- **Node.js & Express.js**: Used for building server-side applications and managing backend operations.
+
+
 
 ## Installation Steps
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/Shorno/tas-kit
+    git clone https://github.com/rianhasansiam/Task-Management-App.git
     ```
 2. Navigate to the project directory:
     ```bash
-    cd tas-kit
+    cd Task-Management-App
     ```
 3. Install the dependencies:
     ```bash
@@ -53,16 +66,7 @@ In-Progress", and "Done".
     npm start
     ```
 
-## Technologies Used
 
-- **Frontend:**
-    - React
-    - TypeScript
-    - react-query
-    - zod
-    - react-hot-toast
-    - dayjs
-    - lucide-react
-    - shadcn/ui
+
 
 
