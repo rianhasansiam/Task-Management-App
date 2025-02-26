@@ -12,6 +12,8 @@ export default function Navbar() {
                     <span className="text-xl font-bold text-gray-800 dark:text-white">Rian Takser</span>
                 </div>
                 <div className="hidden md:flex items-center space-x-6">
+
+                    
                 </div>
 
                 <div className={"flex justify-center items-center gap-4"}>

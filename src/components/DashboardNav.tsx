@@ -1,4 +1,4 @@
-import {Layout, LogOut} from "lucide-react";
+
 import {Link} from "react-router";
 import {Avatar, AvatarFallback, AvatarImage} from "@radix-ui/react-avatar";
 import useAuthStore from "@/store/authStore.ts";
@@ -14,12 +14,12 @@ const DashboardNav = () => {
                 <div className="flex h-16 items-center justify-between">
                     <Link to="/" className="flex items-center space-x-3 group">
                         <div
-                            className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 transition-all group-hover:from-blue-700 group-hover:to-indigo-700">
-                            <Layout className="h-6 w-6 text-white"/>
+                            className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br ">
+                         <img src=" https://img.icons8.com/?size=100&id=9LCcCoTYXaRk&format=png&color=000000" alt="" />
                         </div>
                         <span
                             className="text-xl font-bold tracking-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent dark:text-white">
-                            TasKit
+                            Rian Tasker
                         </span>
                     </Link>
                     <div className="flex items-center gap-6">
@@ -48,7 +48,7 @@ const DashboardNav = () => {
                             size="sm"
                             onClick={logout}
                         >
-                            <LogOut/>
+                            <img className="w-7" src="https://img.icons8.com/?size=100&id=K61Xm4cuTBi8&format=png&color=000000"/>
                         </Button>
                     </div>
                 </div>

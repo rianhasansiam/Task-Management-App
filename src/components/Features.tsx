@@ -6,7 +6,7 @@ const Features = () => {
         <section  id="features">
             <div className="container mx-auto px-6">
                 <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-16">
-                    Powerful Features for Seamless Task Management
+                Organize your tasks into To-Do, In Progress, and Done categories with drag-and-drop functionality.
                 </h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
                     <FeatureCard

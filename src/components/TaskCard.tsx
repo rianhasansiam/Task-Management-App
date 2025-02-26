@@ -61,9 +61,9 @@ export default function TaskCard({
     return (
         <div
             className={`group relative bg-white dark:bg-gray-800 rounded-xl p-4 hover:shadow-lg transition-all duration-200 border-l-4 ${
-                task.category === "To-Do" ? "border-blue-500 dark:border-blue-400" :
-                    task.category === "In-Progress" ? "border-amber-400 dark:border-amber-300" :
-                        "border-emerald-500 dark:border-emerald-400"
+                task.category === "To-Do" ? "" :
+                    task.category === "In-Progress" ? "" :
+                        ""
             } shadow-sm hover:shadow-blue-100/30 dark:hover:shadow-blue-900/20 ${
                 isDragging ? "opacity-50" : ""
             }`}

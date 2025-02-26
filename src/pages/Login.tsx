@@ -27,8 +27,8 @@ export default function Login() {
             className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 flex flex-col">
             <div className="container mx-auto px-6 py-4">
                 <Link to="/" className="flex items-center space-x-2">
-                    <Layout className="h-8 w-8 text-indigo-600 dark:text-indigo-400"/>
-                    <span className="text-xl font-bold text-gray-800 dark:text-white">TasKit</span>
+                <img className='w-16' src="https://img.icons8.com/?size=100&id=9LCcCoTYXaRk&format=png&color=000000" alt="" />
+                    <span className="text-xl font-bold text-gray-800 dark:text-white">Rian Tasker</span>
                 </Link>
             </div>
 
@@ -37,10 +37,10 @@ export default function Login() {
                     <div className="space-y-8">
                         <div className="text-center mb-8">
                             <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">
-                                Welcome to TasKit
+                                Welcome to Rian Taske
                             </h1>
                             <p className="text-gray-600 dark:text-gray-300">
-                                Organize your tasks efficiently
+                                Designed By <a className="text-blue-500"  target='blank' href='https://www.linkedin.com/in/rian-hasan-siam/'>@rianhasansiam</a>
                             </p>
                         </div>
 

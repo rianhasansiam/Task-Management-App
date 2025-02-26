@@ -16,9 +16,9 @@ interface ColumnProps {
 }
 
 const columnColors = {
-    "To-Do": "from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20",
-    "In-Progress": "from-amber-50 to-amber-100 dark:from-amber-900/20 dark:to-amber-800/20",
-    "Done": "from-emerald-50 to-emerald-100 dark:from-emerald-900/20 dark:to-emerald-800/20"
+    "To-Do": "bg-blue-300 dark:bg-blue-900",
+    "In-Progress": "bg-orange-300 dark:bg-orange-900",
+    "Done": "bg-green-300 dark:bg-green-900"
 };
 
 export default function TaskColumn({ title, tasks, isLoading, id }: ColumnProps) {

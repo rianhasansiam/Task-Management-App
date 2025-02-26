@@ -219,11 +219,11 @@ export default function Dashboard() {
                 <Button
                     onClick={() => setIsDialogOpen(true)}
                     size="sm"
-                    className="bg-gradient-to-br from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-blue-200 dark:hover:shadow-blue-900/30 mb-6"
+                    className="bg-gradient-to-br flex  from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-blue-200 dark:hover:shadow-blue-900/30 mb-6  mx-auto"
                     disabled={isLoading}
                 >
                     <Plus className="h-4 w-4 mr-2"/>
-                    Add Task
+                    Add Your Task
                 </Button>
                 <DndContext
                     sensors={sensors}
