@@ -8,7 +8,7 @@ export default function Navbar() {
         <nav className="container mx-auto px-6 py-4">
             <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
-                    <img src="https://img.icons8.com/?size=100&id=9LCcCoTYXaRk&format=png&color=000000" alt="" />
+                    <img className='w-16' src="https://img.icons8.com/?size=100&id=9LCcCoTYXaRk&format=png&color=000000" alt="" />
                     <span className="text-xl font-bold text-gray-800 dark:text-white">Rian Takser</span>
                 </div>
                 <div className="hidden md:flex items-center space-x-6">
