@@ -10,7 +10,7 @@ export default function Footer() {
                         <span className="text-lg font-bold">Rian Tasker</span>
                     </div>
                     <div className="text-gray-400 text-sm">
-                        © 2025 TasKit. All rights reserved.
+                        © 2025 Rian Tasker. All rights reserved.
                     </div>
                 </div>
             </div>
